@@ -13,7 +13,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 
     # Start the docker-compose services
     echo "Starting services with docker-compose..."
-    docker compose up --detach
+    sudo docker-compose up --detach
 
 # If running ts-gpt ollama container, enable this
 #    # Get the model installed on ts-gpt (requires curl)
@@ -22,7 +22,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 
     # Re-attach to compose logs
     echo "Re-attaching to console logs"
-    docker compose logs -f
+    sudo docker-compose logs -f
 else
     echo "Installation canceled by the user."
 fi
